@@ -1,11 +1,6 @@
-# chatty-kathy-AlexBlackson
-chatty-kathy-AlexBlackson created by GitHub Classroom
+# Chatty Kathy - Alex Blackson
 
 Name: Alex Blackson
-
-Pitt ID: arb171
-
-Peoplesoft Number: 3920894
 
 ## Installation 
 
