@@ -1,4 +1,4 @@
-# Chatty Kathy - Alex Blackson
+# Chatty Kathy By Alex Blackson
 
 Name: Alex Blackson
 
