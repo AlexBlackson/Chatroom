@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Chatroom - {{ super() }}{% endblock %}
+{% block script %}<script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>{% endblock %}
+
+{% block body %}
+	<h1 class="profile">Chatroom: <span id="chatName">{{ chatroom }}</span></h1>
+	<br/>
+	<table id="messageBoard">
+		{% set count = 0 %}
+		{% if messages %}
+			{% for m in messages %}
+			<tr>
+				<td>{{ m.user }}</td>
+				<td> {{ m.text }}</td>
+			</tr>
+			{% endfor %}
+			<span id="mCount" class="invisible">{{ messages|length }}</span>
+		{% endif %}
+	</table>
+	<span class="moveRight">
+	<form action="" method="post">
+		New message: <input type="text" id="messageText" name="messageName" class="messageClass" value="" />
+		<input type="button" id="sendMessage" value="Send"/>
+	</form>
+	</span>
+	<br/>
+	<a href="{{ url_for("profile", username = username) }}">View all Chatrooms</a>
+	<span id="ifDeleted" class="invisible">{{ url_for('profile', username=username) }}</span>
+{% endblock %}

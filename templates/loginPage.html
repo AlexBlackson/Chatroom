@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Login Page - {{ super() }}{% endblock %}
+
+{% block body %}
+	<h2>Please login:</h2>
+	<form action="" method="post">
+		Username:  <input type="text" name="username" />
+		<br />
+		Password:  <input type="password" name="password" />
+		<br />
+		<input type="submit" value="Login" />
+	</form>
+	<br/>
+	To register a new acoount click <a href= "{{ url_for("addUser") }}" >here</a>
+{% endblock %}

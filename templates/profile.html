@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Login Page - {{ super() }}{% endblock %}
+
+{% block body %}
+	<h1 class="profile">Chatrooms</h1>
+	<br/>
+	{% if chatrooms %}
+	<ul>
+		{% for c in chatrooms %}
+			<li>
+				<a href = "{{ url_for("chat", room = c.room ) }}" >{{ c.room }}</a> 
+				{% if c.creator == username %}
+				 - <a href="{{ url_for("deleteChat", chatName = c.room ) }}">Click to delete</a>
+				{% endif %}
+			</li>
+		{% endfor %}
+	</ul>
+	{% else %}
+		<h2 class="warning">Currently no chatrooms available</h2>
+	{% endif %}
+	<br/>
+	<form action="" method="post">
+		New chat room name:<input type="text" name="chatName" />
+		<br/>
+		<input type="submit" value="Create"/>
+	</form>
+{% endblock %}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+		<title>{% block title %}Chatty Kathy{% endblock %}</title>
+		{% block script %}{% endblock %}
+	</head>
+	<body>
+		<br/>
+		<h1 class="main">Chatty Kathy</h1>
+		<div class="whiteBack">
+		<br/>
+		{% if username %}
+			<div class="welcome">Welcome, <span id="username">{{ username }}</span>! <br/><a href="{{ url_for("logout") }}">Logout</a></div>
+		{% endif %}
+		{% block body %}
+		{% endblock %}
+		</div>
+	</body>
+</html>
